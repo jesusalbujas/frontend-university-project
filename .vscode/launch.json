@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Vue: Chrome",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:9527",
+            "webRoot": "${workspaceFolder}/src",
+            "sourceMapPathOverrides": {
+                "webpack:///src/*": "${webRoot}/*"
+            },
+            "preLaunchTask": "serve"
+        },
+        {
+            "name": "Vue: Firefox",
+            "request": "launch",
+            "type": "firefox",
+            "url": "http://localhost:9527",
+            "webRoot": "${workspaceFolder}/src",
+            "pathMappings": [
+                { "url": "webpack:///src/", "path": "${webRoot}/" }
+            ],
+            "preLaunchTask": "serve"
+        },
+        {
+            "name": "Vue: Edge",
+            "request": "launch",
+            "type": "msedge",
+            "url": "http://localhost:9527",
+            "webRoot": "${workspaceFolder}/src",
+            "preLaunchTask": "serve"
+        }
+    ]
+}

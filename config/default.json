@@ -1,0 +1,90 @@
+{
+  "server": {
+    "host": "192.168.1.106",
+    "port": 9527,
+    "publicPath": "/base-public-path/",
+    "vueVersion": "develop-1.0.0"
+  },
+  "adempiere": {
+    "api": {
+      "url": "http://192.168.1.106/api/",
+      "timeout": 99999999
+    },
+    "images": {
+      "url": "http://192.168.1.106/api/resources"
+    },
+    "resource": {
+      "url": "http://192.168.1.106/api/resources"
+    }
+  },
+  "repository": {
+    "url": "https://api.github.com",
+    "releaseNo": "releaseNoForDocumentation"
+  },
+  "taskManager": {
+    "api": {
+      "url": "http://192.168.1.106:8080/v1",
+      "endPoints": {
+        "jobs": "/jobs",
+        "runJob": "/jobs",
+        "restoreJob": "/restore"
+      }
+    }
+  },
+  "documentation": {
+    "api": {
+      "url": "https://api.github.com/repos/adempiere/"
+    }
+  },
+  "betaFunctionality": {
+    "window": false,
+    "process": false,
+    "report": false,
+    "smartBrowser": false,
+    "form": false
+  },
+  "express":{
+    "receipt": "/express-receipt",
+    "movement": "/express-movement",
+    "shipment": "/express-shipment"
+  },
+  "issuesManagement": {
+    "endpoint": "/issue-management"
+  },
+  "generalGedger": {
+    "accounts": "/general-ledger/accounts",
+    "organizations": "/general-ledger/organizations",
+    "rePost": "/general-ledger/re-post"
+  },
+  "match": {
+    "endpoint": "/form/addons/match"
+  },
+  "pointOfSales": {
+    "endpoint": "/point-of-sales"
+  },
+  "priceChecking": {
+    "endpoint": "/point-of-sales"
+  },
+  "payrollActionNotice": {
+    "endpoint": "/payroll-action-notice"
+  },
+  "session": {
+    "timeout": 300000
+  },
+  "vPayPrint": {
+    "endpoint": "/payment-print-export"
+  },
+  "VBankStatementMatch": {
+    "endpoint": "/bank-statement-match"
+  },
+  "weight": {
+    "endpoint": "/form/addons/weight"
+  },
+  "noticeManagement": {
+    "endpoint": "/notice-management"
+  },
+  "trialBalanceDrillable": {
+    "endpoint": "/trial-balance-drillable"
+  },
+  "theme": "src/themes/default"
+}
