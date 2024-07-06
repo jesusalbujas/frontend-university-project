@@ -55,32 +55,32 @@ jobs:
           path: dist
 
 
-  # Publish dist binaries to application
-  publish-app-dist:
-    name: Upload ADempiere-Vue binaries
-    # TODO: Does not support edit release: {"resource":"Release","code":"already_exists","field":"tag_name"}
-    if: ${{ github.event_name == 'release' && github.event.action == 'created' }}
-    needs:
-      - build-app
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download build dist app
-        uses: actions/download-artifact@v3
-        with:
-          name: adempiere-vue
+  # # Publish dist binaries to application
+  # publish-app-dist:
+  #   name: Upload ADempiere-Vue binaries
+  #   # TODO: Does not support edit release: {"resource":"Release","code":"already_exists","field":"tag_name"}
+  #   if: ${{ github.event_name == 'release' && github.event.action == 'created' }}
+  #   needs:
+  #     - build-app
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Download build dist app
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: adempiere-vue
 
-      - name: Compress files for application dist
-        uses: TheDoctor0/zip-release@0.6.2
-        with:
-          filename: 'Adempiere-Vue.zip'
-          path: './'
+  #     - name: Compress files for application dist
+  #       uses: TheDoctor0/zip-release@0.6.2
+  #       with:
+  #         filename: 'Adempiere-Vue.zip'
+  #         path: './'
 
-      - name: Publish application binary in repository
-        uses: skx/github-action-publish-binaries@master
-        env:
-          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
-        with:
-          args: 'Adempiere-Vue.zip'
+  #     - name: Publish application binary in repository
+  #       uses: skx/github-action-publish-binaries@master
+  #       env:
+  #         TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
+  #       with:
+  #         args: 'Adempiere-Vue.zip'
 
   # Check secrets to push image in docker hub registry
   check-docker-secrets:
@@ -179,58 +179,58 @@ jobs:
             ${{ secrets.DOCKER_REPO_FRONTEND }}:${{ github.event.release.tag_name }}
 
 
-  # Build dist documentation ADempiere-Vue
-  build-docs:
-    name: Build dist ADempiere-Vue docs
-    runs-on: ubuntu-latest
+  # # Build dist documentation ADempiere-Vue
+  # build-docs:
+  #   name: Build dist ADempiere-Vue docs
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v3
+  #   steps:
+  #     - name: Check out the repo
+  #       uses: actions/checkout@v3
 
-      - name: Node configuration
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-          cache: 'yarn'
+  #     - name: Node configuration
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18.x
+  #         cache: 'yarn'
 
-      - name: Enable https to install packages
-        run: git config --global url."https://".insteadOf git://
+  #     - name: Enable https to install packages
+  #       run: git config --global url."https://".insteadOf git://
 
-      - name: Generate dist docs
-        run: |
-          cd docs
-          yarn install --ignore-engines
-          yarn build
+  #     - name: Generate dist docs
+  #       run: |
+  #         cd docs
+  #         yarn install --ignore-engines
+  #         yarn build
 
-      - name: Upload dist docs
-        uses: actions/upload-artifact@v3
-        with:
-          name: adempiere-vue-docs
-          path: docs/.vuepress/dist
+  #     - name: Upload dist docs
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: adempiere-vue-docs
+  #         path: docs/.vuepress/dist
 
 
-  # Publish dist binaries to documentation
-  publish-docs-dist:
-    name: Upload ADempiere-Vue docs binaries
-    needs:
-      - build-docs
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download build dist docs
-        uses: actions/download-artifact@v3
-        with:
-          name: adempiere-vue-docs
+  # # Publish dist binaries to documentation
+  # publish-docs-dist:
+  #   name: Upload ADempiere-Vue docs binaries
+  #   needs:
+  #     - build-docs
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Download build dist docs
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: adempiere-vue-docs
 
-      - name: Compress files for documentation dist
-        uses: TheDoctor0/zip-release@0.6.2
-        with:
-          filename: 'Adempiere-Vue-Documentation.zip'
-          path: './'
+  #     - name: Compress files for documentation dist
+  #       uses: TheDoctor0/zip-release@0.6.2
+  #       with:
+  #         filename: 'Adempiere-Vue-Documentation.zip'
+  #         path: './'
 
-      - name: Publish documentation binary in repository
-        uses: skx/github-action-publish-binaries@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          args: 'Adempiere-Vue-Documentation.zip'
+  #     - name: Publish documentation binary in repository
+  #       uses: skx/github-action-publish-binaries@master
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       with:
+  #         args: 'Adempiere-Vue-Documentation.zip'
