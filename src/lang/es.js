@@ -74,10 +74,10 @@ export default {
     profile: 'Profile'
   },
   login: {
-    title: 'Ingresar al Sistema',
-    logIn: 'Acceso',
-    username: 'Usuario',
-    password: 'Contraseña',
+    title: 'Te damos la bienvenida de nuevo',
+    // logIn: 'Acceso',
+    // username: 'Usuario',
+    // password: 'Contraseña',
     any: 'nada',
     thirdparty: 'Conectar con',
     thirdpartyTips: 'No se puede simular en local, así que combine su propia simulación de negocios. ! !'
