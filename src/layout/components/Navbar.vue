@@ -1,6 +1,7 @@
 <template>
   <div class="navbar">
     <hamburger id="hamburger-container" :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
+    <img src="@/image/ADempiere/project-two/logo.png" alt="Logo" class="logo">
 
     <el-button
       v-if="isMenuMobile && isMobile"
@@ -21,7 +22,7 @@
           <el-button icon="el-icon-refresh-right" type="text" style="color: black;font-size: 18px;" @click="cacheReset()" />
         </el-tooltip> -->
         <el-tooltip v-if="!isMobile" :content="$t('route.guide')" placement="top-start">
-          <el-button icon="el-icon-info" type="text" style="color: black;font-size: larger" @click.prevent.stop="guide" />
+          <!-- <el-button icon="el-icon-info" type="text" style="color: black;font-size: larger" @click.prevent.stop="guide" /> -->
         </el-tooltip>
         <search id="header-search" class="right-menu-item" />
         <header-notification id="badge-navar" />
@@ -87,7 +88,7 @@ import Screenfull from '@/components/Screenfull'
 // import SizeSelect from '@/components/SizeSelect'
 import LangSelect from '@/components/LangSelect'
 import Search from '@/components/HeaderSearch'
-import HeaderNotification from '@/components/ADempiere/HeaderNotification'
+// import HeaderNotification from '@/components/ADempiere/HeaderNotification'
 import { getImagePath } from '@/utils/ADempiere/resource.js'
 import Driver from 'driver.js' // import driver.js
 import 'driver.js/dist/driver.min.css' // import driver.js css
@@ -95,7 +96,7 @@ import 'driver.js/dist/driver.min.css' // import driver.js css
 export default {
   components: {
     Breadcrumb,
-    HeaderNotification,
+    // HeaderNotification,
     Hamburger,
     ErrorLog,
     Screenfull,
@@ -216,7 +217,7 @@ export default {
     async logout() {
       await this.$store.dispatch('user/logout')
       this.$router.push({
-        path: 'http://api.adempiere.io:3333/realms/adempiere/protocol/openid-connect/auth?response_type=code&redirect_uri=http%3A%2F%2Fapi.adempiere.io%2Fvue&state=QURfQXBwUmVnaXN0cmF0aW9uX0lEPTEwMDAwMDZ8QXBwbGljYXRpb25UeXBlPU9JQQ%3D%3D&client_id=adempiere-zk-cli&scope=openid+email+profile'
+        path: '/login'
       }, () => {})
       this.$store.commit('setPointOfSalesList', [])
       this.$store.commit('setListOrderLine', [])
@@ -326,6 +327,14 @@ export default {
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
+  .logo {
+    width: 170px; /* Ajusta el tamaño del logo según necesites */
+    height: 33px;
+    margin-left: 3px;
+    margin-top: 8px; /* Mueve el logo hacia abajo ajustando este valor */
+    float: left; /* Mueve el logo a la izquierda */
+  }
+
   .hamburger-container {
     line-height: 46px;
     height: 100%;
@@ -341,6 +350,7 @@ export default {
 
   .breadcrumb-container {
     float: left;
+    margin-top: 0px;
   }
 
   .errLog-container {

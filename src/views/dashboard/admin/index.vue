@@ -47,7 +47,7 @@
       <el-col :span="16">
         <template v-for="(dashboardAttributes, index) in panelRight">
           <el-col
-            v-if="(isEmptyValue(mainDashboard.chartType) || mainDashboard.name !== dashboardAttributes.name)"
+            v-if="(isEmptyValue() || mainDashboard.name !== dashboardAttributes.name)"
             :key="index"
             :span="24"
             style="padding-right:8px;margin-bottom:2px;"
@@ -109,7 +109,7 @@ import PanelGroupPortlet from '@/components/ADempiere/Dashboard/panelGroupPortle
 import PageStyleSettings from '@/components/ADempiere/PageStyleSettings'
 import Todo from '@/views/dashboard/admin/components/TodoList/index.vue'
 import UserInfo from '@/views/profile/components/InfoUser.vue'
-import notices from '@/components/ADempiere/Dashboard/notices'
+// import notices from '@/components/ADempiere/Dashboard/notices'
 import ThemePicker from '@/components/ThemePicker'
 import RightPanel from '@/components/RightPanel'
 
@@ -121,7 +121,7 @@ export default defineComponent({
 
   components: {
     Todo,
-    notices,
+    // notices,
     UserInfo,
     RightPanel,
     PanelGroup,
@@ -222,14 +222,14 @@ export default defineComponent({
       return store.getters.getStoredMainDashboard
     })
 
-    const panelNotice = computed(() => {
-      return {
-        dashboardType: 'dashboard',
-        fileName: 'notices',
-        isCollapsible: true,
-        name: language.t('profile.notice')
-      }
-    })
+    // const panelNotice = computed(() => {
+    //   return {
+    //     dashboardType: 'dashboard',
+    //     fileName: 'notices',
+    //     isCollapsible: true,
+    //     name: language.t('profile.notice')
+    //   }
+    // })
 
     const panelTodo = computed(() => {
       return {
@@ -243,15 +243,15 @@ export default defineComponent({
     const panelRight = computed(() => {
       const panelRight = store.getters['settings/getPanelRight']
       const listDashboard = store.getters.getStoredDashboardsList
-      if (isEmptyValue(listDashboard.find(list => list.fileName === 'notices'))) {
-        listDashboard.unshift(panelNotice.value)
-      }
+      // if (isEmptyValue(listDashboard.find(list => list.fileName === 'notices'))) {
+      //   listDashboard.unshift(panelNotice.value)
+      // }
       const list = listDashboard
         .filter(list => {
           if (
             (list.sequence === 0 &&
-            !isEmptyValue(list.chartType)) &&
-            panelRight.includes(list.chartType)
+            !isEmptyValue()) &&
+            panelRight.includes()
           ) {
             return list
           } else if (panelRight.includes(list.fileName)) {
@@ -264,11 +264,11 @@ export default defineComponent({
     const panelLeft = computed(() => {
       const panelLeft = store.getters['settings/getPanelLeft']
       const listDashboard = store.getters.getStoredDashboardsList
-      if (isEmptyValue(listDashboard.find(list => list.fileName === 'notices'))) {
-        listDashboard.unshift(panelNotice.value)
-      }
+      // if (isEmptyValue(listDashboard.find(list => list.fileName === 'notices'))) {
+      //   listDashboard.unshift(panelNotice.value)
+      // }
       if (isEmptyValue(listDashboard.find(list => list.fileName === 'todo'))) {
-        listDashboard.unshift(panelTodo.value)
+        listDashboard.unshift({})
       }
       const list = listDashboard
         .filter(list => {
@@ -303,7 +303,7 @@ export default defineComponent({
           listDashboardPanel.push(panelTodo.value)
         }
         if (isEmptyValue(listDashboardPanel.find(list => list.fileName === 'notices'))) {
-          listDashboardPanel.push(panelNotice.value)
+          listDashboard.unshift({})
         }
         return listDashboardPanel
       }
@@ -345,7 +345,6 @@ export default defineComponent({
       mainDashboard,
       listDashboard,
       showSettings,
-      panelNotice,
       currentRole,
       sidebarLogo,
       panelRight,

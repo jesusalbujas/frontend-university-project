@@ -24,7 +24,7 @@
           <div slot="content">
             {{ getRole.name }} | {{ getRole.client.name }} | {{ storedOrganization.name }}
           </div>
-          <img v-if="logo" :src="logo" class="sidebar-logo" style="height: 50px;width: 50px;">
+          <img v-if="logo" :src="logo" class="sidebar-logo" style="height: 30px;width: 30px;">
           <svg-icon v-else icon-class="AD" class="standard-logo" />
           <b style="margin-left: 5px;">{{ title }}</b>
         </el-tooltip>
@@ -32,14 +32,14 @@
 
       <span v-else>
         <p key="expand" style="display: flex;text-align: center;width: 100%;padding: 0px 15px;margin-top: 0px;">
-          <img v-if="logo" :src="logo" class="sidebar-logo" style="height: 50px;width: 50px;" @click="dashboard()">
+          <img v-if="logo" :src="logo" class="sidebar-logo" style="height: 40px;width: 40px;" @click="dashboard()">
           <svg-icon v-else icon-class="AD" class="standard-logo" />
           <b style="color: white;font-size: 18px;padding-top: 15px;cursor: pointer; margin-left: 5px;" @click="dashboard()">
             {{ systemName }}
           </b>
           <br>
         </p>
-        <p class="sidebar-sub-title" style="color: white; font-size: 12px;margin: 0px;margin-top: 0px;" @click="profile()">
+        <p class="sidebar-sub-title" style="color: white; font-size: 12px;margin: 2px;margin-top: 0px;" @click="profile()">
           {{ getRole.name }} | {{ getRole.client.name }} | {{ storedOrganization.name }}
         </p>
       </span>
@@ -159,6 +159,11 @@ export default defineComponent({
     cursor: pointer;
   }
 
+  img {
+    border-style: none;
+    margin-top: 9px;
+  }
+
   & .sidebar-logo-link {
     height: 100%;
     width: 100%;
@@ -179,7 +184,7 @@ export default defineComponent({
       color: #fff;
       font-weight: 600;
       // line-height: 50px;
-      font-size: 14px;
+      font-size: 20px;
       font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
       vertical-align: middle;
     }

@@ -32,7 +32,7 @@
         :lg="spanSize"
         class="card-panel-col"
       >
-        <div class="card-panel" @click="handleClick(taks)">
+        <!-- <div class="card-panel" @click="handleClick(taks)">
           <div
             :class="taks.classCard"
             style="text-align: center;width: 100%;"
@@ -60,7 +60,7 @@
               {{ taks.name }}
             </p>
           </div>
-        </div>
+        </div> -->
       </el-col>
     </el-row>
   </div>
