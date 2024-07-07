@@ -350,7 +350,7 @@ export default {
         dashboardType: 'dashboard',
         fileName: 'notices',
         isCollapsible: true,
-        name: language.t('profile.notice')
+        name: language.t()
       }
     })
 
@@ -386,7 +386,7 @@ export default {
       showNavar,
       sidebarLogo,
       fixedHeader,
-      panelNotice,
+      // panelNotice,
       showAutoSave,
       mainDashboard,
       listDashboard,

@@ -224,9 +224,9 @@ export default {
     changeLanguage: 'Change language',
     changeLanguagePlaceholder: 'Choose a language',
     activityLogs: 'Activity Logs',
-    notice: 'Notice',
-    request: 'Request',
-    workflowActivities: 'Workflow Activities',
+    // notice: 'Notice',
+    // request: 'Request',
+    // workflowActivities: 'Workflow Activities',
     systemInformation: {
       tabLabel: 'System Information',
       releaseNumber: 'Release',
