@@ -17,14 +17,14 @@
 -->
 <template>
   <span>
-    <el-button
+    <!-- <el-button
       plain
       type="primary"
       icon="el-icon-setting"
       class="button-base-icon"
       style="position: fixed;top: 50%;right: 0%;font-size: 30px;"
       @click="showSettings = !showSettings"
-    />
+    /> -->
     <el-drawer
       :visible.sync="showSettings"
       :with-header="true"
