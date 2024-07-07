@@ -11,18 +11,17 @@
             <pan-thumb
               :image="avatarResize"
               :hoverable="true"
-            >
-              {{ currentRole.name }}
-            </pan-thumb>
+              :style="{ transition: 'none' }"
+            />
           </div>
           <div class="box-center">
             <div class="user-name text-center">
-              {{ currentRole.name }}
+              {{ userInfo.name }}
             </div>
           </div>
           <!-- <br> -->
         </el-col>
-        <el-col :span="12">
+        <!-- <el-col :span="12">
           <div class="user-role text-muted">
             <div class="user-header">
               {{ $t('profile.availableRoles') }}
@@ -31,7 +30,7 @@
               {{ item.name | uppercaseFirst }}
             </li>
           </div>
-        </el-col>
+        </el-col> -->
       </el-row>
     </div>
   </el-card>
@@ -110,6 +109,14 @@ export default defineComponent({
 .box-center {
   margin: 0 auto;
   display: table;
+}
+
+pan-thumb {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
 }
 
 .text-muted {

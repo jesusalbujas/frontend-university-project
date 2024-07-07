@@ -31,10 +31,21 @@
             <el-tabs v-model="activeTab" class="tab-profile">
               <el-tab-pane :label="$t('profile.role')" name="role">
                 <!-- Info User -->
-                <user-info
+                <el-col :span="12">
+                  <div class="user-role text-muted">
+                    <div class="user-header">
+                      {{ $t('profile.availableRoles') }}
+                    </div>
+                    <li v-for="(item, key) in rolesList" :key="key">
+                      {{ item.name | uppercaseFirst }}
+                    </li>
+                  </div>
+                </el-col>
+                <div class="role-actual">{{ "Rol actual: " + currentRole.name }}</div>
+                <!-- <user-info
                   :show-panel="false"
                   :show-panel-notifications="true"
-                />
+                /> -->
               </el-tab-pane>
               <!-- Settings -->
               <el-tab-pane
@@ -95,6 +106,8 @@ import UserCard from './components/UserCard.vue'
 import UserInfo from '@/views/profile/components/InfoUser.vue'
 import UserActivity from '@/views/profile/components/UserActivity/index.vue'
 import { Settings } from '@/layout/components'
+import { computed } from '@vue/composition-api'
+import store from '@/store'
 
 // Utils and Helper Methods
 import { isEmptyValue } from '@/utils/ADempiere/valueUtils'
@@ -161,6 +174,15 @@ export default {
     }
   },
 
+  setup() {
+    const rolesList = computed(() => {
+      return store.getters['user/getRoles']
+    })
+    return {
+      rolesList
+    }
+  },
+
   watch: {
     filterDate(date) {
       this.loadUserLogActivities(date)
@@ -195,5 +217,16 @@ export default {
   width: 100% !important;
   overflow: auto;
   display: block !important;
+}
+
+.user-header {
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.role-actual{
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  font-weight: bold;
 }
 </style>
