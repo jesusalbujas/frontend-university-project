@@ -282,6 +282,7 @@ export function generateField({
       field.sortNo = field.sortNo > 0 ? field.sortNo + 1 : 0
 
       // if field with value displayed in main panel
+      /*
       field.isShowedFromUser = evaluateDefaultFieldShowed({
         ...field,
         parsedDefaultValue: parsedDefaultValueTo
@@ -290,11 +291,15 @@ export function generateField({
         ...field,
         parsedDefaultValue: parsedDefaultValueTo
       })
+      */
+      field.isShowedFromUser = true
+      field.isShowedTableFromUser = true
     }
   }
 
   // if field with value displayed in main panel
   if (!typeRange) {
+    /*
     field.isShowedFromUser = evaluateDefaultFieldShowed({
       ...field,
       parsedDefaultValue
@@ -303,6 +308,9 @@ export function generateField({
       ...field,
       parsedDefaultValue
     })
+    */
+    field.isShowedFromUser = true
+    field.isShowedTableFromUser = true
   }
   field.isShowedFromUserDefault = field.isShowedFromUser
   field.isShowedTableFromUserDefault = field.isShowedTableFromUser

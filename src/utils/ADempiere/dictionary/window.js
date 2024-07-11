@@ -1470,7 +1470,7 @@ export function generateTabs({
       parentFieldsList,
       sequenceTabsList,
       // app properties
-      isShowedTableRecords: !currentTab.isSingleRow, // !isParentTab,
+      isShowedTableRecords: true, // !currentTab.isSingleRow, // !isParentTab,
       index, // this index is not related to the index in which the tabs are displayed
       isSelected: false,
       hasBeenRendered: false
