@@ -159,42 +159,42 @@ export default defineComponent({
           isLoading: isLoadingRecordLogsList.value,
           component: RecordLogs
         },
-        {
-          name: 'listReference',
-          title: language.t('window.containerInfo.referenceRecords'),
-          show: true,
-          svg: false,
-          isLoading: isLoadingListReference.value,
-          iconClass: 'el-icon-zoom-in',
-          component: ReferenceRecords
-        },
-        {
-          name: 'recordAttachmentTab',
-          title: language.t('component.attachment.label'),
-          show: true,
-          svg: false,
-          isLoading: isLoadingListAttachment.value,
-          iconClass: 'el-icon-paperclip',
-          component: AttachmentManager
-        },
-        {
-          name: 'recordNotesTab',
-          title: language.t('window.containerInfo.notes'),
-          show: true,
-          svg: true,
-          iconClass: 'message',
-          isLoading: isLoadingNotesRecord.value,
-          component: RecordNotes
-        },
-        {
-          name: 'getListIssues',
-          title: language.t('window.containerInfo.issues'),
-          show: true,
-          svg: true,
-          iconClass: 'guide',
-          isLoading: isLoadingIssuessRecord.value,
-          component: recordIssues
-        },
+        // {
+        //   name: 'listReference',
+        //   title: language.t('window.containerInfo.referenceRecords'),
+        //   show: true,
+        //   svg: false,
+        //   isLoading: isLoadingListReference.value,
+        //   iconClass: 'el-icon-zoom-in',
+        //   component: ReferenceRecords
+        // },
+        // {
+        //   name: 'recordAttachmentTab',
+        //   title: language.t('component.attachment.label'),
+        //   show: true,
+        //   svg: false,
+        //   isLoading: isLoadingListAttachment.value,
+        //   iconClass: 'el-icon-paperclip',
+        //   component: AttachmentManager
+        // },
+        // {
+        //   name: 'recordNotesTab',
+        //   title: language.t('window.containerInfo.notes'),
+        //   show: true,
+        //   svg: true,
+        //   iconClass: 'message',
+        //   isLoading: isLoadingNotesRecord.value,
+        //   component: RecordNotes
+        // },
+        // {
+        //   name: 'getListIssues',
+        //   title: language.t('window.containerInfo.issues'),
+        //   show: true,
+        //   svg: true,
+        //   iconClass: 'guide',
+        //   isLoading: isLoadingIssuessRecord.value,
+        //   component: recordIssues
+        // },
         {
           name: 'searchWorkflowHistory',
           show: isWorkflowLog.value,
@@ -203,34 +203,34 @@ export default defineComponent({
           iconClass: 'tree-table',
           isLoading: false,
           component: WorkflowLogs
-        },
-        {
-          name: 'accountingInformation',
-          show: isAccountingInfo.value,
-          title: language.t('window.containerInfo.accountingInformation.title'),
-          svg: true,
-          isLoading: false,
-          iconClass: 'balance',
-          component: AcctViewer // () => import('@/components/ADempiere/Form/AcctViewer')
-        },
-        {
-          name: 'listProductStorage',
-          show: !isEmptyValue(storeProduct.value),
-          title: language.t('listStoreProduct.title'),
-          svg: true,
-          isLoading: false,
-          iconClass: 'warehouse',
-          component: StoreProduct
-        },
-        {
-          name: 'listDashboard',
-          show: !isEmptyValue(showPanelDashboard.value),
-          title: language.t('navbar.dashboard'),
-          svg: true,
-          isLoading: false,
-          iconClass: 'dashboard',
-          component: RecordDashboard
         }
+        // {
+        //   name: 'accountingInformation',
+        //   show: isAccountingInfo.value,
+        //   title: language.t('window.containerInfo.accountingInformation.title'),
+        //   svg: true,
+        //   isLoading: false,
+        //   iconClass: 'balance',
+        //   component: AcctViewer // () => import('@/components/ADempiere/Form/AcctViewer')
+        // }
+        // {
+        //   name: 'listProductStorage',
+        //   show: !isEmptyValue(storeProduct.value),
+        //   title: language.t('listStoreProduct.title'),
+        //   svg: true,
+        //   isLoading: false,
+        //   iconClass: 'warehouse',
+        //   component: StoreProduct
+        // },
+        // {
+        //   name: 'listDashboard',
+        //   show: !isEmptyValue(showPanelDashboard.value),
+        //   title: language.t('navbar.dashboard'),
+        //   svg: true,
+        //   isLoading: false,
+        //   iconClass: 'dashboard',
+        //   component: RecordDashboard
+        // }
       ]
     })
 

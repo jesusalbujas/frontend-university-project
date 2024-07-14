@@ -23,10 +23,10 @@
     <el-descriptions :column="1">
       <el-descriptions-item label-style="{ color: #606266; font-weight: bold; }">
         <template slot="label">
-          <svg-icon icon-class="table" style="margin-right: 10px;" />
+          <svg-icon icon-class="table" style="margin-top:10px; margin-left: 10px; margin-right: 10px;" />
           {{ $t('window.containerInfo.log.tableName') }}
         </template>
-        <span style="color: #606266; font-weight: bold;">
+        <span style="margin-top: 10px; color: #606266; font-weight: bold;">
           {{ getTableName }}
         </span>
       </el-descriptions-item>
@@ -34,19 +34,19 @@
     <el-descriptions :column="2">
       <el-descriptions-item label-style="{ color: #606266; font-weight: bold; }">
         <template slot="label">
-          <i class="el-icon-star-on" style="margin-right: 10px;" />
+          <i class="el-icon-files" style="font-weight: bold; margin-top: 10px; margin-left: 10px; margin-right: 10px;" />
           {{ $t('window.containerInfo.log.recordID') }}
         </template>
-        <span style="color: #606266;">
+        <span style="margin-top: 7px; color: #606266;">
           {{ recordId }}
         </span>
       </el-descriptions-item>
       <el-descriptions-item label-style="{ color: #606266; font-weight: bold; }">
         <template slot="label">
-          <i class="el-icon-star-on" style="margin-right: 10px;" />
+          <i class="el-icon-files" style="font-weight: bold; margin-top: 10px; margin-left: 10px; margin-right: 10px;" />
           {{ $t('window.containerInfo.log.recordUUID') }}
         </template>
-        <span style="color: #606266;">
+        <span style="margin-top: 7px; color: #606266;">
           {{ recordUuid }}
         </span>
       </el-descriptions-item>
@@ -54,23 +54,23 @@
       <template v-if="!isEmptyValue(listLogs)">
         <el-descriptions-item label-style="{ color: #606266; font-weight: bold; }">
           <template slot="label">
-            <svg-icon icon-class="user" style="margin-right: 10px;" />
+            <svg-icon icon-class="user" style="margin-top:10px; margin-left: 10px; margin-right: 10px;" />
             {{ $t('window.containerInfo.log.createdBy') }}
           </template>
-          <span style="color: #606266; font-weight: bold;">
+          <span style="margin-top: 10px; color: #606266; font-weight: bold;">
             {{ listLogs.created_by_name }}
           </span>
-          <span style="color: #606266; padding-left: 5px;">
+          <span style="margin-top: 10px; color: #606266; padding-left: 5px;">
             ({{ translateDate({ value: listLogs.created }) }})
           </span>
         </el-descriptions-item>
 
         <el-descriptions-item label-style="{ color: #606266; font-weight: bold; }">
           <template slot="label">
-            <svg-icon icon-class="user" style="margin-right: 10px;" />
+            <svg-icon icon-class="user" style="margin-top: 10px; margin-left: 10px; margin-right: 10px;" />
             {{ $t('window.containerInfo.log.updatedBy') }}
           </template>
-          <span style="color: #606266; font-weight: bold;">
+          <span style="margin-top: 10px; margin-left: 10px; color: #606266; font-weight: bold;">
             {{ listLogs.updated_by_name }}
           </span>
           <span style="color: #606266; padding-left: 5px;">
@@ -125,9 +125,9 @@
       </el-timeline-item>
     </el-timeline>
 
-    <div v-else>
+    <!-- <div v-else>
       <el-empty />
-    </div>
+    </div> -->
   </span>
   <loading-view
     v-else
