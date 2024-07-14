@@ -22,7 +22,7 @@ const window = {
     help: 'Realiza una búsqueda haciendo uso de rangos de valores, selección múltiple de valores, y operadores de comparación'
   },
   newRecord: 'New Record',
-  copyRecord: 'Copy Record',
+  // copyRecord: 'Copy Record',
   deleteRecord: 'Delete Record',
   confirmDeleteRecord: 'Are you sure you want to delete this record?',
   cancel: 'Cancel',

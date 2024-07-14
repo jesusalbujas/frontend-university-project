@@ -22,12 +22,12 @@ const window = {
     help: 'Realiza una búsqueda haciendo uso de rangos de valores, selección múltiple de valores, y operadores de comparación'
   },
   newRecord: 'Nuevo Registro',
-  copyRecord: 'Copiar Registro',
+  // copyRecord: 'Copiar Registro',
   deleteRecord: 'Eliminar Registro',
   confirmDeleteRecord: '¿Está seguro de que quiere eliminar este registro?',
   cancel: 'Cancelar',
   confirm: 'Confirmar',
-  undoNew: 'Descartar Nuevo Registro',
+  undoNew: 'Descartar nuevo registro',
   containerInfo: {
     notes: 'Notas',
     emptyNote: 'No se puede crear una nota en blanco',
@@ -72,8 +72,8 @@ const window = {
   callout: {
     error: 'Error En Callout'
   },
-  toggleSingle: 'Cambiar Mono',
-  multiRecord: 'Multi Registro',
+  toggleSingle: 'Catalogo',
+  multiRecord: 'Cambiar a Catalogo',
   gridToggle: 'Cambiar mono/multi registro',
   recordValidation: {
     closeWindow: 'Cerrar Ventana',

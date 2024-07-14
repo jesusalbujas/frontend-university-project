@@ -54,13 +54,13 @@
         <svg-icon icon-class="newRecord" />
         {{ $t('window.newRecord') }}
       </el-dropdown-item>
-      <el-dropdown-item
+      <!-- <el-dropdown-item
         command="copyAndNewRecord"
         divided
       >
         <i class="el-icon-copy-document" />
         {{ $t('window.copyRecord') }}
-      </el-dropdown-item>
+      </el-dropdown-item> -->
     </el-dropdown-menu>
   </el-dropdown>
 </template>
