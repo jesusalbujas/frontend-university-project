@@ -51,7 +51,7 @@
         </el-col>
       </el-row>
 
-      <el-form-item prop="userName">
+      <!-- <el-form-item prop="userName">
         <span class="svg-container">
           <svg-icon icon-class="user" />
         </span>
@@ -65,10 +65,10 @@
           autocomplete="on"
           @keyup.enter.native="jumpToPassword"
         />
-      </el-form-item>
+      </el-form-item> -->
 
       <el-tooltip v-model="isCapsTooltip" :content="$t('page.login.capsLock')" placement="right" manual>
-        <el-form-item prop="password">
+        <!-- <el-form-item prop="password">
           <span class="svg-container">
             <svg-icon icon-class="password" />
           </span>
@@ -88,16 +88,16 @@
           <span class="show-pwd" @click="showPwd">
             <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
           </span>
-        </el-form-item>
+        </el-form-item> -->
       </el-tooltip>
-      <el-button
+      <!-- <el-button
         :loading="loading || isLoadingLogin"
         type="primary"
         style="width:100%;"
         @click.native.prevent="handleLogin"
       >
         {{ $t('login.logIn') }}
-      </el-button>
+      </el-button> -->
       <el-button
         v-for="(serviceItem, key) in listServices"
         :key="key"
