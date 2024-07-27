@@ -18,7 +18,9 @@
 
 <template>
   <div id="tab-panel-content-from" class="wrapper" style="margin-right: 10px">
+    <el-empty v-if="isEmptyValue(recordUuid) && currentFieldList.option && !isNewPanel" description="Sin Datos" />
     <el-form
+      v-else
       label-position="top"
       label-width="200px"
       @submit.native.prevent="notSubmitForm"
@@ -162,6 +164,10 @@ export default defineComponent({
       return store.getters.getUuidOfContainer(props.containerUuid)
     })
 
+    const isNewPanel = computed(() => {
+      return store.getters.getisNewPanel
+    })
+
     const shadowGroup = computed(() => {
       if (isMobile.value) {
         return 'never'
@@ -261,6 +267,8 @@ export default defineComponent({
       recordUuid,
       isMobile,
       isActiveCurrentTab,
+      currentFieldList,
+      isNewPanel,
       // methodos
       setFocus
     }

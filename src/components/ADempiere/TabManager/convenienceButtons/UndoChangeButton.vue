@@ -93,6 +93,7 @@ export default defineComponent({
       //   fieldsList: props.tabAttributes.fieldsList,
       //   option: language.t('actionMenu.undo')
       // })
+      // store.commit('setRecord', null)
       const info = {
         fieldsList: tabAttributes.value.fieldsList,
         option: language.t('actionMenu.undo')
@@ -103,6 +104,7 @@ export default defineComponent({
         parentUuid: props.parentUuid,
         containerUuid: props.containerUuid
       })
+      store.commit('setisNewPanel', false)
     }
 
     return {

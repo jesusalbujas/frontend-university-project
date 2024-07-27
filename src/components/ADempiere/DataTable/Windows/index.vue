@@ -296,7 +296,16 @@ export default defineComponent({
       return 'auto'
     })
 
+    const currentFieldList = computed(() => {
+      return store.getters.getCurrentFieldList()
+    })
+
     const recordsWithFilter = computed(() => {
+      const recordUuid = store.getters.getUuidOfContainer(props.containerUuid)
+      if (isEmptyValue(recordUuid) && isEmptyValue(currentFieldList.option) && !store.getters.getisNewPanel) {
+        return []
+      }
+
       if (props.containerManager && props.containerManager.getRecordsList) {
         return props.containerManager.getRecordsList({
           containerUuid: props.containerUuid
@@ -661,6 +670,7 @@ export default defineComponent({
       keyColumn,
       isMobile,
       tabData,
+      currentFieldList,
       // Methods
       handleSelectionAll,
       tableRowClassName,

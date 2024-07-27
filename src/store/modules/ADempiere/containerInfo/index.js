@@ -45,7 +45,8 @@ const containerInfo = {
     },
     columnName: '',
     isLoaded: false,
-    defaultOpenedTab: 'getRecordLogs'
+    defaultOpenedTab: 'getRecordLogs',
+    isNewPanel: true
   },
 
   mutations: {
@@ -79,6 +80,9 @@ const containerInfo = {
     },
     setDefaultOpenedTab(state, nameTab) {
       state.defaultOpenedTab = nameTab
+    },
+    setisNewPanel(state, show) {
+      state.isNewPanel = show
     }
   },
 
@@ -197,6 +201,9 @@ const containerInfo = {
     },
     getDefaultOpenedTab: (state) => {
       return state.defaultOpenedTab
+    },
+    getisNewPanel: (state) => {
+      return state.isNewPanel
     }
   }
 }

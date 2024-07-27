@@ -148,6 +148,7 @@ export default defineComponent({
         isCopyValues: isCopy
       })
 
+      store.commit('setisNewPanel', true)
       store.dispatch('panelInfo', {
         currentTab: tabAttributes.value,
         currentRecord: recordParentTab.value
