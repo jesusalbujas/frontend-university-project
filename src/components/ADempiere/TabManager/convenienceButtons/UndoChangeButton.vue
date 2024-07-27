@@ -93,7 +93,7 @@ export default defineComponent({
       //   fieldsList: props.tabAttributes.fieldsList,
       //   option: language.t('actionMenu.undo')
       // })
-      // store.commit('setRecord', null)
+      store.commit('setRecord', null)
       const info = {
         fieldsList: tabAttributes.value.fieldsList,
         option: language.t('actionMenu.undo')
