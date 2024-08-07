@@ -210,7 +210,7 @@ import { requestExistsIssues } from '@/api/ADempiere/logs/tabInfo/windowIssues.t
 
 // Utils and Helper Methods
 import { isEmptyValue } from '@/utils/ADempiere/valueUtils.js'
-import { showMessage } from '@/utils/ADempiere/notification'
+// import { showMessage } from '@/utils/ADempiere/notification'
 
 export default defineComponent({
   name: 'TabManager',
@@ -800,13 +800,13 @@ export default defineComponent({
           countAttachment.value = response.record_count
           showAttachmentAvailable.value = Boolean(response.record_count)
         })
-        .catch(error => {
-          console.warn(`Error getting Count Attachment: ${error.message}. Code: ${error.code}.`)
-          showMessage({
-            message: error.message,
-            type: 'error'
-          })
-        })
+        // .catch(error => {
+        //   console.warn(`Error getting Count Attachment: ${error.message}. Code: ${error.code}.`)
+        //   showMessage({
+        //     message: error.message,
+        //     type: 'error'
+        //   })
+        // })
     }
 
     /**
