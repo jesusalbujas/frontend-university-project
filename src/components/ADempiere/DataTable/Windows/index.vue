@@ -59,7 +59,7 @@
         :column-key="fieldAttributes.columnName"
         :prop="fieldAttributes.columnName"
         sortable
-        :min-width="widthColumn(fieldAttributes)"
+        width="160"
         :fixed="fieldAttributes.isFixedTableColumn"
       >
         <template slot="header">
@@ -84,7 +84,6 @@
       </el-table-column>
     </el-table>
   </div>
-
   <loading-view
     v-else
     key="window-table-loading"
@@ -578,8 +577,8 @@ export default defineComponent({
 
     function widthColumn(fieldAttributes) {
       const { componentPath } = fieldAttributes
-      if (['FieldSearch', 'FieldAccountingCombination'].includes(componentPath)) return '450'
-      return '210'
+      if (['FieldSearch', 'FieldAccountingCombination'].includes(componentPath)) return '250'
+      return '100'
     }
 
     /**
