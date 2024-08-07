@@ -40,47 +40,39 @@
         :container-manager="containerManager"
         :is-change-record="isChangeRecord"
       />
-    </span>
 
-    <convenience-buttons
-      :parent-uuid="parentUuid"
-      :container-uuid="tabAttributes.uuid"
-      :container-manager="containerManager"
-      :tab-attributes="tabAttributes"
-      style="display: contents;"
-    />
-
-    <!-- <full-screen-container
-      style="float: right;"
-      :parent-uuid="parentUuid"
-      :container-uuid="currentTabUuid"
-    /> -->
-
-    <action-menu
-      :parent-uuid="parentUuid"
-      :container-uuid="tabAttributes.uuid"
-      :container-manager="containerManager"
-      :actions-manager="listAction"
-      style="float: right;"
-    />
-    <el-drawer
-      :visible.sync="showMenuMobile"
-      :with-header="true"
-      size="100%"
-      class="drawer-panel-info"
-    >
-      <span slot="title">
-        <span style="color: #606266; font-weight: bold;">
-          {{ $t('actionMenu.menu') }} {{ tabAttributes.name }}
-        </span>
-      </span>
-      <menu-mobile
+      <convenience-buttons
         :parent-uuid="parentUuid"
-        :container-uuid="tabAttributes.containerUuid"
+        :container-uuid="tabAttributes.uuid"
+        :container-manager="containerManager"
+        :tab-attributes="tabAttributes"
+        style="display: contents;"
+      />
+
+      <el-button
+        v-if="!isEditMode"
+        plain
+        size="small"
+        type="primary"
+        style="margin-right: 5px; margin-left: 10px;"
+        @click="editar"
+      >
+        <span style="padding: 0px;">
+          <svg-icon icon-class="edit" />
+          <b v-show="!isMobile">
+            Editar Registro
+          </b>
+        </span>
+      </el-button>
+
+      <action-menu
+        :parent-uuid="parentUuid"
+        :container-uuid="tabAttributes.uuid"
         :container-manager="containerManager"
         :actions-manager="listAction"
+        style="float: right;"
       />
-    </el-drawer>
+    </span>
   </div>
 </template>
 
@@ -222,6 +214,35 @@ export default defineComponent({
         containerUuid: props.tabAttributes.uuid
       })
     }
+    function editar() {
+      // Llama a la función changeShowedRecords pero sin cambiar entre registros
+      const row = store.getters.getTabCurrentRow({ containerUuid: props.currentTabUuid })
+      store.dispatch('changeTabAttribute', {
+        attributeName: 'currentRowSelect',
+        attributeNameControl: undefined,
+        attributeValue: row,
+        parentUuid: props.parentUuid,
+        containerUuid: props.tabAttributes.uuid
+      })
+      store.commit('setTabSelectionsList', {
+        containerUuid: props.containerUuid,
+        recordsSelected: [row]
+      })
+      store.dispatch('changeTabAttribute', {
+        attributeName: 'isShowedTableRecords',
+        attributeNameControl: undefined,
+        attributeValue: false,
+        parentUuid: props.parentUuid,
+        containerUuid: props.tabAttributes.uuid
+      })
+      store.dispatch('changeTabAttribute', {
+        attributeName: 'isEditMode',
+        attributeNameControl: undefined,
+        attributeValue: true,
+        parentUuid: props.parentUuid,
+        containerUuid: props.tabAttributes.uuid
+      })
+    }
 
     return {
       // computed
@@ -231,6 +252,7 @@ export default defineComponent({
       isEditSecuence,
       showMenuMobile,
       isShowedTableRecords,
+      editar,
       // methods
       changeShowedRecords
     }
