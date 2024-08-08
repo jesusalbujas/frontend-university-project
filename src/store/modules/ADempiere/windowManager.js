@@ -557,7 +557,9 @@ const windowManager = {
                   containerManager
                 })
               })
+              commit('setisNewPanel', true)
             } else {
+              commit('setisNewPanel', false)
               // set default values to create if without records response
               // dispatch('setTabDefaultValues', {
               //   parentUuid,

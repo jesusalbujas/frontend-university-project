@@ -18,7 +18,7 @@
 
 <template>
   <div id="tab-panel-content-from" class="wrapper" style="margin-right: 10px">
-    <el-empty v-if="isEmptyValue(recordUuid) && currentFieldList.option && !isNewPanel" description="Sin Datos" />
+    <el-empty v-if="!isNewPanel" description="Sin Datos" />
     <el-form
       v-else
       label-position="top"
@@ -153,7 +153,11 @@ export default defineComponent({
       return []
     })
     const currentFieldList = computed(() => {
-      return store.getters.getCurrentFieldList
+      const field = store.getters.getCurrentFieldList
+      if (field.option === 'Nuevo') {
+        return true
+      }
+      return false
     })
 
     const isMobile = computed(() => {
