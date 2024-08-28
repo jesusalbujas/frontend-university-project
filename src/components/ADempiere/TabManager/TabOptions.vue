@@ -50,7 +50,6 @@
       />
 
       <el-button
-        v-if="!isEditMode"
         plain
         size="small"
         type="primary"

@@ -61,6 +61,10 @@ export default defineComponent({
     containerUuid: {
       type: [String, Number],
       required: true
+    },
+    isVisible: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -103,7 +107,7 @@ export default defineComponent({
     })
 
     const isSaveRecord = computed(() => {
-      if (isEmptyValue(recordUuid.value) || recordUuid.value === 'create-new') {
+      if ((isEmptyValue(recordUuid.value) || recordUuid.value === 'create-new') && props.isVisible) {
         return true
       }
       // if (!isEmptyValue(emptyMandatoryFields.value)) {

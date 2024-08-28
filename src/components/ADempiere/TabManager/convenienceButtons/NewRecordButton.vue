@@ -86,6 +86,10 @@ export default defineComponent({
     containerUuid: {
       type: [String, Number],
       required: true
+    },
+    isVisible: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -119,6 +123,9 @@ export default defineComponent({
     })
 
     const isCreateRecord = computed(() => {
+      if (!props.isVisible) {
+        return true
+      }
       if (isSecondaryParentTab.value) {
         return false
       }

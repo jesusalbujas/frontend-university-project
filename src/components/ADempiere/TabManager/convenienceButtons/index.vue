@@ -22,6 +22,7 @@
       <new-record-button
         :parent-uuid="parentUuid"
         :container-uuid="tabAttributes.uuid"
+        :is-visible="isNewPanel"
       />
 
       <undo-change-button
@@ -42,6 +43,7 @@
       <save-record-button
         :parent-uuid="parentUuid"
         :container-uuid="tabAttributes.uuid"
+        :is-visible="isNewPanel"
       />
 
       <document-action
@@ -168,6 +170,10 @@ export default defineComponent({
       })
     }
 
+    const isNewPanel = computed(() => {
+      return store.getters.getisNewPanel
+    })
+
     /**
      * Vuex subscription when record parent change
      * TODO: Add support to restart or delete timer by flushPersistenceQueue
@@ -194,6 +200,7 @@ export default defineComponent({
       getCurrentTab,
       isEditSecuence,
       isDisableOptionsTabChild,
+      isNewPanel,
       // Methodss
       openLog
     }
