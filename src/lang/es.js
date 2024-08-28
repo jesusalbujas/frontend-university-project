@@ -97,7 +97,7 @@ export default {
     cancel: 'Cancelar'
   },
   guide: {
-    description: 'The guide page is useful for some people who entered the project for the first time. You can briefly introduce the features of the project. Demo is based on ',
+    description: 'La página de la guía es útil para algunas personas que ingresan al proyecto por primera vez. La demostración se basa en ',
     button: 'Ver guía'
   },
   components: {

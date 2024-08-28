@@ -2,32 +2,32 @@ const steps = [
   {
     element: '#hamburger-container',
     popover: {
-      title: 'Hamburger',
-      description: 'Open && Close sidebar',
+      title: '"Hamburguesa o Desplegable"',
+      description: 'Abrir y Cerrar Barra lateral',
       position: 'bottom'
     }
   },
   {
     element: '#breadcrumb-container',
     popover: {
-      title: 'Breadcrumb',
-      description: 'Indicate the current page location',
+      title: 'Ruta de navegación',
+      description: 'Indica la ubicación actual de la página',
       position: 'bottom'
     }
   },
   {
     element: '#header-search',
     popover: {
-      title: 'Page Search',
-      description: 'Page search, quick navigation',
+      title: 'Búsqueda en la página',
+      description: 'Búsqueda de páginas, navegación rápida',
       position: 'left'
     }
   },
   {
     element: '#screenfull',
     popover: {
-      title: 'Screenfull',
-      description: 'Set the page into fullscreen',
+      title: 'Pantalla Completa',
+      description: 'Colocar pantalla completa',
       position: 'left'
     }
   },
@@ -42,8 +42,8 @@ const steps = [
   {
     element: '#tags-view-container',
     popover: {
-      title: 'Tags view',
-      description: 'The history of the page you visited',
+      title: 'Vista de Etiquetas',
+      description: 'El historial de ventanas visitadas',
       position: 'bottom'
     },
     padding: 0

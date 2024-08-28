@@ -22,7 +22,7 @@
           <el-button icon="el-icon-refresh-right" type="text" style="color: black;font-size: 18px;" @click="cacheReset()" />
         </el-tooltip> -->
         <el-tooltip v-if="!isMobile" :content="$t('route.guide')" placement="top-start">
-          <!-- <el-button icon="el-icon-info" type="text" style="color: black;font-size: larger" @click.prevent.stop="guide" /> -->
+          <el-button icon="el-icon-info" type="text" style="color: black;font-size: larger" @click.prevent.stop="guide" />
         </el-tooltip>
         <search id="header-search" class="right-menu-item" />
         <header-notification id="badge-navar" />
@@ -91,6 +91,7 @@ import Search from '@/components/HeaderSearch'
 // import HeaderNotification from '@/components/ADempiere/HeaderNotification'
 import { getImagePath } from '@/utils/ADempiere/resource.js'
 import Driver from 'driver.js' // import driver.js
+import steps from '@/views/guide/steps.js'
 import 'driver.js/dist/driver.min.css' // import driver.js css
 
 export default {
@@ -200,10 +201,11 @@ export default {
       this.isProfilePreview = false
     },
     guide() {
-      this.driver = new Driver()
-      const value = this.formatGuide(this.$route.meta.type)
-      if (this.isEmptyValue(value)) return
-      this.driver.defineSteps(value)
+      // this.driver = new Driver()
+      // const value = this.formatGuide(this.$route.meta.type)
+      // if (this.isEmptyValue(value)) return
+      // this.driver.defineSteps(value)
+      this.driver.defineSteps(steps)
       this.driver.start()
     },
     isMenuOption() {
