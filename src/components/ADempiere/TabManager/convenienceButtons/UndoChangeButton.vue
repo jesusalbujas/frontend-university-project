@@ -104,7 +104,7 @@ export default defineComponent({
         parentUuid: props.parentUuid,
         containerUuid: props.containerUuid
       })
-      store.commit('setisNewPanel', false)
+      // store.commit('setisNewPanel', false)
     }
 
     return {
