@@ -55,13 +55,13 @@
     </el-button>
   </el-popover>
 
-  <document-status-tag
+  <!-- <document-status-tag
     v-else
     key="document-status"
     size="small"
     class="document-status-tag-empty"
     :displayed-value="displayDocStatus"
-  />
+  /> -->
 </template>
 
 <script>
