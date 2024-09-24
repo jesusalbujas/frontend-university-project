@@ -104,7 +104,7 @@ export default {
       const displayValue = this.displayedValue
       if (!isEmptyValue(displayValue)) {
         // is a list/table value
-        return this.metadata.name + ': ' + displayValue
+        return this.metadata.name
       }
       let value = convertBooleanToString(this.value, false)
       if ([TRUE_STRING, FALSE_STRING].includes(value)) {
@@ -112,7 +112,7 @@ export default {
         value = convertBooleanToTranslationLang(value)
       }
       // is possible big decimal value
-      return this.metadata.name + ': ' + value
+      return this.metadata.name
     },
     iconProps() {
       return {
