@@ -36,7 +36,8 @@
         />
       </p>
 
-      <div id="browser-query-criteria">
+      <!-- Condicional para ocultar el criterio de búsqueda -->
+      <div v-if="!isSpecificUrl" id="browser-query-criteria">
         <!-- Query Criteria -->
         <collapse-criteria
           :title="$t('views.searchCriteria')"
@@ -53,6 +54,7 @@
         </collapse-criteria>
         <br>
       </div>
+
       <div id="browser-table">
         <!-- Result of Records in the Table -->
         <default-table
@@ -76,11 +78,6 @@
       :container-uuid="processUuid"
     />
   </div>
-
-  <loading-view
-    v-else
-    key="browser-loading"
-  />
 </template>
 
 <script>
@@ -117,6 +114,31 @@ export default defineComponent({
     ModalDialog,
     PanelDefinition,
     TitleAndHelp
+  },
+
+  data() {
+    return {
+      isSpecificUrl: false // Estado para controlar si la URL es la específica
+    }
+  },
+
+  watch: {
+    // Observa los cambios en la ruta
+    $route(to, from) {
+      this.checkUrl()
+    }
+  },
+
+  mounted() {
+    // Chequea la URL al montar el componente
+    this.checkUrl()
+  },
+
+  methods: {
+    checkUrl() {
+      const specificUrl = '/11/1000001/50006/1000015/browser/50208' // La URL específica
+      this.isSpecificUrl = this.$route.path.includes(specificUrl)
+    }
   },
 
   props: {
