@@ -136,8 +136,10 @@ export default defineComponent({
 
   methods: {
     checkUrl() {
-      const specificUrl = '/11/1000001/50006/1000015/browser/50208' // La URL específica
+      const specificUrl = '/11/1000001/50006/1000015/browser/50208' // URL Asignación
+      const devolutionUrl = '11/1000001/50006/1000030/browser/1000001' // URL Devolución
       this.isSpecificUrl = this.$route.path.includes(specificUrl)
+      this.isSpecificUrl = this.$route.path.includes(devolutionUrl)
     }
   },
 
