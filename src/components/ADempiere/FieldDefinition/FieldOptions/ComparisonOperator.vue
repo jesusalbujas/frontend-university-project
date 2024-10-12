@@ -17,33 +17,37 @@
 -->
 
 <template>
-  <!-- <el-dropdown
-    size="small"
-    plain
-    :split-button="true"
-    type="primary"
-    :class="{
-      'comparison-operator-container': true,
-      'without-defualt-action': true,
-      'disabled-operators': isReadOnlyFromField
-    }"
-    trigger="click"
-    :disabled="isReadOnlyFromField"
-    @command="handleOperator"
-  >
-    {{ $t('operators.' + currentOperatorValue) }}
-    <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item
-        v-for="(operator, index) in operatorList"
-        :key="index"
-        :command="operator"
-        :class="{ 'is-current-comparison-operator': operator === currentOperatorValue}"
-        :disabled="isDisableOperator(operator)"
-      >
-        {{ $t('operators.' + operator) }}
-      </el-dropdown-item>
-    </el-dropdown-menu>
-  </el-dropdown> -->
+  <div>
+    <!--
+    <el-dropdown
+      size="small"
+      plain
+      :split-button="true"
+      type="primary"
+      :class="{
+        'comparison-operator-container': true,
+        'without-defualt-action': true,
+        'disabled-operators': isReadOnlyFromField
+      }"
+      trigger="click"
+      :disabled="isReadOnlyFromField"
+      @command="handleOperator"
+    >
+      {{ $t('operators.' + currentOperatorValue) }}
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item
+          v-for="(operator, index) in operatorList"
+          :key="index"
+          :command="operator"
+          :class="{ 'is-current-comparison-operator': operator === currentOperatorValue}"
+          :disabled="isDisableOperator(operator)"
+        >
+          {{ $t('operators.' + operator) }}
+        </el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
+    -->
+  </div>
 </template>
 
 <script>
