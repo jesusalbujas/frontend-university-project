@@ -17,7 +17,7 @@
 -->
 
 <template>
-  <el-dropdown
+  <!-- <el-dropdown
     size="small"
     plain
     :split-button="true"
@@ -43,7 +43,7 @@
         {{ $t('operators.' + operator) }}
       </el-dropdown-item>
     </el-dropdown-menu>
-  </el-dropdown>
+  </el-dropdown> -->
 </template>
 
 <script>
