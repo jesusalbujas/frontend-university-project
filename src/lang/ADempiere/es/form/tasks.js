@@ -20,7 +20,7 @@ const tasks = {
   title: 'Tareas',
   summary: 'Resumen',
   executions: 'Ejecuciones',
-  empty: 'Sin Datos',
+  empty: 'No hay nada aquí.',
   table: {
     id: 'ID',
     name: 'Nombre',

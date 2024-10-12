@@ -18,7 +18,7 @@
 
 <template>
   <div id="tab-panel-content-from" class="wrapper" style="margin-right: 10px">
-    <el-empty v-if="!isNewPanel" description="Sin Datos" />
+    <el-empty v-if="!isNewPanel" description="No hay nada aquí." />
     <el-form
       v-else
       label-position="top"
