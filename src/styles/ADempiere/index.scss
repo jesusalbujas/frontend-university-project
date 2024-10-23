@@ -20,3 +20,17 @@
 @import './view.scss';
 @import './table.scss';
 @import './text.scss';
+
+
+.field-definition:has(#IsReturnedToOrganization) .field-title-name {
+    display: none; /* Oculta el título solo cuando está dentro de .field-definition que contiene el switch */
+  }
+
+.field-definition .el-form-item--medium #IsReturnedToOrganization {
+    display: none; /* Oculta el switch */
+  }
+
+
+.el-form-item__label:has(#IsReturnedToOrganization) {
+    display: none; /* Oculta el título solo cuando está dentro de .field-definition que contiene el switch */
+  }
