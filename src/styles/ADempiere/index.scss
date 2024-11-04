@@ -34,3 +34,11 @@
 .el-form-item__label:has(#IsReturnedToOrganization) {
     display: none; /* Oculta el título solo cuando está dentro de .field-definition que contiene el switch */
   }
+
+/* Selecciona el campo con el id SerNo y aplica estilos */
+div#JAU01_SerNo.el-input.el-input--medium.el-input--suffix.custom-field-text .el-input__inner {
+  pointer-events: none; /* Evita que el usuario haga clic o enfoque el campo */
+  background-color: #f5f5f5; /* Cambia el color de fondo para dar apariencia de deshabilitado */
+  color: #666666; /* Cambia el color del texto para indicar que está deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor a "no permitido" */
+}
