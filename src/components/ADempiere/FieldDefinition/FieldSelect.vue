@@ -340,15 +340,7 @@ export default {
       this.optionsList = this.getStoredLookupAll
 
       if (isShowList) {
-        const listLookups = this.getStoredLookupList
-        if (isEmptyValue(listLookups) || this.isWithSearchValue) {
-          this.loadListFromServer()
-        } else if (listLookups.length === 1) {
-          const firstOption = listLookups.at(0)
-          if (firstOption && this.blankValues.includes(firstOption.value)) {
-            this.loadListFromServer()
-          }
-        }
+        this.loadListFromServer()
       }
     },
     remoteSearch(searchQuery = '') {

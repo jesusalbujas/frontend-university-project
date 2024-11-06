@@ -119,12 +119,13 @@ export default defineComponent({
       value: true
     })
 
-    // get process/report from vuex store or request from server
     const getProcess = async() => {
       const process = storedProcessDefinition.value
+      console.log({ process })
       if (process) {
         processMetadata.value = process
         isLoadedMetadata.value = true
+        clearParameters()
         return
       }
 
