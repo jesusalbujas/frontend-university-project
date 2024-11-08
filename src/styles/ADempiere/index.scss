@@ -42,3 +42,10 @@ div#JAU01_SerNo.el-input.el-input--medium.el-input--suffix.custom-field-text .el
   color: #666666; /* Cambia el color del texto para indicar que está deshabilitado */
   cursor: not-allowed; /* Cambia el cursor a "no permitido" */
 }
+
+div#MovementDateAsset.el-input.el-input--medium.el-input--suffix.custom-field-text .el-input__inner {
+  pointer-events: none;
+  background-color: #f5f5f5; 
+  color: #666666; 
+  cursor: not-allowed; 
+}
