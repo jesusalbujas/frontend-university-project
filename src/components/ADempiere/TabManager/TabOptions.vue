@@ -49,7 +49,7 @@
         style="display: contents;"
       />
 
-      <el-button
+      <!-- <el-button
         plain
         size="small"
         type="primary"
@@ -62,7 +62,7 @@
             Editar Registro
           </b>
         </span>
-      </el-button>
+      </el-button> -->
 
       <action-menu
         :parent-uuid="parentUuid"
