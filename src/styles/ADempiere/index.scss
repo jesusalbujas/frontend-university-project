@@ -49,3 +49,10 @@ div#MovementDateAsset.el-input.el-input--medium.el-input--suffix.custom-field-te
   color: #666666; 
   cursor: not-allowed; 
 }
+
+div#AD_User_ID.el-input.el-input--medium.el-input--suffix.custom-field-text .el-input__inner {
+  pointer-events: none;
+  background-color: #f5f5f5; 
+  color: #666666; 
+  cursor: not-allowed; 
+}
