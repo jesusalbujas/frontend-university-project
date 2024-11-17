@@ -34,14 +34,14 @@
                 <el-col :span="12">
                   <div class="user-role text-muted">
                     <div class="user-header">
-                      {{ $t('profile.availableRoles') }}
+                      <div class="role-actual">{{ "Rol actual: " + currentRole.name }}</div>
+                      <!-- {{ $t('profile.availableRoles') }} -->
                     </div>
-                    <li v-for="(item, key) in rolesList" :key="key">
+                    <!-- <li v-for="(item, key) in rolesList" :key="key">
                       {{ item.name | uppercaseFirst }}
-                    </li>
+                    </li> -->
                   </div>
                 </el-col>
-                <div class="role-actual">{{ "Rol actual: " + currentRole.name }}</div>
                 <!-- <user-info
                   :show-panel="false"
                   :show-panel-notifications="true"
