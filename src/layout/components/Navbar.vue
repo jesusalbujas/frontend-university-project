@@ -36,7 +36,7 @@
         </el-tooltip>
         -->
 
-        <lang-select class="right-menu-item hover-effect" />
+        <!-- <lang-select class="right-menu-item hover-effect" /> -->
 
       </template>
       <el-button v-if="isMobile" type="text" icon="el-icon-more" @click="isMenuOption()" />
@@ -86,7 +86,7 @@ import Hamburger from '@/components/Hamburger'
 import ErrorLog from '@/components/ErrorLog'
 import Screenfull from '@/components/Screenfull'
 // import SizeSelect from '@/components/SizeSelect'
-import LangSelect from '@/components/LangSelect'
+// import LangSelect from '@/components/LangSelect'
 import Search from '@/components/HeaderSearch'
 // import HeaderNotification from '@/components/ADempiere/HeaderNotification'
 import { getImagePath } from '@/utils/ADempiere/resource.js'
@@ -102,7 +102,7 @@ export default {
     ErrorLog,
     Screenfull,
     // SizeSelect,
-    LangSelect,
+    // LangSelect,
     ProfilePreview,
     Search
   },
