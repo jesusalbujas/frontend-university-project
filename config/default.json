@@ -1,20 +1,20 @@
 {
   "server": {
-    "host": "api.adempiere.io",
+    "host": "localhost",
     "port": 9527,
     "publicPath": "/base-public-path/",
     "vueVersion": "develop-1.0.0"
   },
   "adempiere": {
     "api": {
-      "url": "http://api.adempiere.io/api/",
+      "url": "http://localhost/api/",
       "timeout": 99999999
     },
     "images": {
-      "url": "http://api.adempiere.io/api/resources"
+      "url": "http://localhost/api/resources"
     },
     "resource": {
-      "url": "http://api.adempiere.io/api/resources"
+      "url": "http://localhost/api/resources"
     }
   },
   "repository": {
@@ -23,7 +23,7 @@
   },
   "taskManager": {
     "api": {
-      "url": "http://api.adempiere.io:8080/v1",
+      "url": "http://localhost:8080/v1",
       "endPoints": {
         "jobs": "/jobs",
         "runJob": "/jobs",
